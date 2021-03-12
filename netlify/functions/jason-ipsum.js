@@ -24,20 +24,23 @@ const visitFarmersMarket = (stall) => {
 exports.handler = async (event, context) => {
 
   // support params in querystring or path
-  // Each visit to the market will get us 100 items.
-  let visitsToTheMarket;  
+  let quantity;  
   if(event.queryStringParameters.quantity) {
-    visitsToTheMarket =  event.queryStringParameters.quantity;
+    quantity =  event.queryStringParameters.quantity;
   } 
   else {
-    visitsToTheMarket = event.path.split("ipsum/")[1];
+    quantity = event.path.split("ipsum/")[1];
   }  
-
+  
   // always return something
-  if(!visitsToTheMarket) {
-    visitsToTheMarket = 1;
+  if(!quantity) {
+    quantity = 1;
   }
   
+  // Each visit to the market will get us 100 items.
+  // And we'll be visiting 10 times more often than you'd expect :)
+  const visitsToTheMarket = quantity * 10;
+
   let jasonIpsum = [];
   for (let visit = 0; visit < visitsToTheMarket; visit++) {
     
@@ -46,20 +49,19 @@ exports.handler = async (event, context) => {
     
     // Garnish it with some delicious Lengstorfian items
     for (let item = 0; item < 40; item++) {
-      // choose a place at random form our stock
-      // and enhance it with some random seasoning
+      // choose a word at random form our stock
+      // and replace it with some random seasoning
       let season = visitFarmersMarket(seasoning);
-      stock.splice(handPick(stock), 0, season);
+      stock.splice(handPick(stock), 1, season);
     }
     jasonIpsum.push(stock.join(" "));
   }
 
   const words = jasonIpsum.join('\n\n');
-
   return {
     statusCode: 200,
     body: JSON.stringify({
-      'words': words.length,
+      'words': words.split(" ").length,
       'ipsum': words
     }) 
   };
