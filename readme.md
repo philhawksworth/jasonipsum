@@ -8,4 +8,4 @@ Get your Jason Ipsum from the [web site](https://jason-ipsum.netlify.app/), or d
 
 ## Improve the seasoning
 
-You can make the Lengstorfian seasoning by adding characteristic words and phrases to the gratifyingly named [jason.json](/blob/main/lib/jason.json) file. Pull request welcome.
+You can make the Lengstorfian seasoning by adding characteristic words and phrases to the gratifyingly named [jason.json](lib/jason.json) file. Pull request welcome.
