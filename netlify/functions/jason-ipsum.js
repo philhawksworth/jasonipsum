@@ -1,3 +1,5 @@
+const url = require('url');
+
 
 // Our basic ipsum
 const organicStock = require('../../lib/ipsum.json');
@@ -21,41 +23,44 @@ const visitFarmersMarket = (stall) => {
 
 exports.handler = async (event, context) => {
 
-  
-  
-  const quantity = event.queryStringParameters.quantity || 2;
-  
-  console.log(`seasoning.length`, seasoning.length);
-  console.log(`quantity`, quantity);
-
+  // support params in querystring or path
   // Each visit to the market will get us 100 items.
-  // And we'll be going more than you expected
-  const visitsToTheMarket = quantity * 10;
+  let visitsToTheMarket;  
+  if(event.queryStringParameters.quantity) {
+    visitsToTheMarket =  event.queryStringParameters.quantity;
+  } 
+  else {
+    visitsToTheMarket = event.path.split("ipsum/")[1];
+  }  
+
+  // always return something
+  if(!visitsToTheMarket) {
+    visitsToTheMarket = 1;
+  }
   
   let jasonIpsum = [];
-  for (let visit = 0; visit <= visitsToTheMarket; visit++) {
+  for (let visit = 0; visit < visitsToTheMarket; visit++) {
     
     // Get some seasonal organic stock as a base for our dish
     let stock = visitFarmersMarket(organicStock).split(" ");
     
     // Garnish it with some delicious Lengstorfian items
-    for (let item = 0; item <= 40; item++) {
-      // choose a word at random form our stock
-      // replace it with a random seasoning
+    for (let item = 0; item < 40; item++) {
+      // choose a place at random form our stock
+      // and enhance it with some random seasoning
       let season = visitFarmersMarket(seasoning);
-      stock.splice(handPick(stock), 1, season);
+      stock.splice(handPick(stock), 0, season);
     }
     jasonIpsum.push(stock.join(" "));
   }
 
-  console.log(`jasonIpsum`, jasonIpsum);
-  
+  const words = jasonIpsum.join('\n\n');
 
   return {
     statusCode: 200,
     body: JSON.stringify({
-      'words': jasonIpsum.join('\n\n').length,
-      'ipsum': jasonIpsum.join('\n\n')
+      'words': words.length,
+      'ipsum': words
     }) 
   };
 

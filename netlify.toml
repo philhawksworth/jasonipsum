@@ -3,11 +3,12 @@
   command = ""
 
 [[redirects]]
+  from = "/ipsum/:quantity"
+  to = "/.netlify/functions/jason-ipsum/:quantity"
+  status = 200
+
+[[redirects]]
   from = "/ipsum"
   to = "/.netlify/functions/jason-ipsum"
   status = 200
 
-[[redirects]]
-  from = "/ipsum/:quantity"
-  to = "/.netlify/functions/jason-ipsum?quantity=:quantity"
-  status = 200
