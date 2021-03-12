@@ -48,6 +48,9 @@ exports.handler = (event, context) => {
     jasonIpsum.push(stock.join(" "));
   }
 
+  console.log(`jasonIpsum`, jasonIpsum);
+  
+
   return {
     statusCode: 200,
     body: JSON.stringify({
