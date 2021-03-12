@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>JasonIpsum- locally sourced organic ispum </title>
+</head>
+<body>
+  <header>
+    <img src="title.svg" class="title" alt="Jason Ipsum">
+    <p class="strapline">
+      Delicious, locally sourced, organic ispum<br />
+      (only available in massive quantities)
+    </p>
+  </header>
+
+  <form action="/ipsum" method="get">
+    <label for="quantity">
+      How much Jason Ipsum would you like? <small>(units are 1000 words because this is Jason's minimum viable output quantity) </small>
+    </label>
+    <input type="number" id="quantity" name="quantity" value=1 min=1 />
+    <button type="submit" class="button">Boop! Jasonify me some ipsum</button>
+  </form>
+
+  <h2>The Jason Ipsum API</h2>
+  <p>
+    Jason Ipsum is also available via an API as follows
+  </p>
+  <pre>
+    GET <a href="/ipsum/2">https://jason-ipsum.netlify.app/ipsum/{quantity}</a>
+  </pre>
+
+
+  <div id="count"></div>
+  <div id="sample"></div>
+
+  <footer>
+    <p>
+      Made by <a href="https://twitter.com/philhawksworth">Phil Hawksworth</a>. Accepting contributions to the code as PRs to increase the Lengstorfian accuracy.
+    </p>
+    <p>
+      For more meaningful Jason Lengstorf content visit <a href="https://jason.af">Jason.af</a> or <a href="https://www.learnwithjason.dev">learnwithjason.dev</a>
+    </p>
+
+  </footer>
+
+
+  <script src="jasonify.js"></script>
+
+</body>
+</html> 

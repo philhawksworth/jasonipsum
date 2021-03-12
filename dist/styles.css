@@ -1,0 +1,139 @@
+:root {
+  --primary-bg-color: #17141E;
+  --primary-text-color: #b1acb9;
+  --secondary-text-color: #FFE33A;
+  --primary-accent-color: #ff69c8;
+  --secondary-accent-color: #fff;
+}
+
+* {
+  margin:0;
+  padding:0;
+}
+
+body,
+html {
+  background-color: var(--primary-bg-color);
+  color: var(--primary-text-color);
+  text-align: center;
+  font-family: "Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+body {
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  max-width: 800px;
+}
+
+a:link,
+a:visited {
+  color: var(--primary-accent-color);
+}
+a:hover,
+a:focus {
+  color: var(--secondary-accent-color);
+}
+
+pre a:link,
+pre a:visited {
+  color: var(--secondary-accent-color);
+}
+pre a:hover,
+pre a:focus {
+  color: var(--primary-accent-color);
+}
+
+h2, h3 {
+  font-family: "Arial Black";
+  text-transform: uppercase;
+  color: var(--secondary-accent-color);
+  margin-top: 3rem;
+}
+
+
+p {
+  margin:1rem 0;
+}
+
+.title {
+  width: 100%;
+  padding: 0;
+  padding: 0;
+}
+
+
+p.strapline {
+  font-size: 1.5rem;
+  margin: 0;
+  font-family: "Arial Black";
+  text-transform: uppercase;
+  color: var(--secondary-text-color);
+}
+
+
+form {
+  margin:3rem 0;
+  border: #FFE33A;
+}
+
+label {
+  padding:1rem;
+  display: block;
+}
+
+small {
+  display: block;
+  font-size: 0.8em;
+}
+
+input[type=number] {
+  font-size: 1.2rem;
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+  margin: 0.4rem 0.2rem;
+  width:3em;
+  text-align: center;
+  font-family: "Arial Black";
+  text-transform: uppercase;
+  color: var(--primary-accent-color);
+  background-color: var(--primary-bg-color);
+  border-radius: 8px;
+  border: solid 2px var(--primary-accent-color);
+}
+
+.button {
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  font-family: "Arial Black";
+  text-transform: uppercase;
+  color: var(--primary-bg-color);
+  background-color: var(--primary-accent-color);
+  border-radius: 8px;
+  border: solid 2px var(--primary-accent-color);
+}
+
+.button:hover,
+.button:focus {
+  border-color: #fff;
+}
+
+footer {
+  border-top: solid 1px var(--primary-text-color);
+  margin-top: 2rem;
+  padding: 2rem 0;
+  font-size: 0.8rem;
+}
+
+pre {
+  display: block;
+  background-color: #000;
+  padding: 2rem 2rem 1rem;
+  margin: 1rem 0;
+  border-radius: 8px;
+}
+
+#sample {
+  margin: 3rem 0;
+  text-align: left;
+}
