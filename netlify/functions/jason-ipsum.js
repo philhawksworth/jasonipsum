@@ -1,6 +1,3 @@
-const url = require('url');
-
-
 // Our basic ipsum
 const organicStock = require('../../lib/ipsum.json');
 

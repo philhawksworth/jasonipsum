@@ -6,6 +6,16 @@
   --secondary-accent-color: #fff;
 }
 
+
+::-moz-selection { 
+  color: var(--primary-bg-color);
+  background-color: var(--primary-accent-color);
+}
+::selection { 
+  color: var(--primary-bg-color);
+  background-color: var(--primary-accent-color);
+}
+
 * {
   margin:0;
   padding:0;
