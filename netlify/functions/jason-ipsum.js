@@ -19,13 +19,15 @@ const visitFarmersMarket = (stall) => {
 }
 
 
-exports.handler = (event) => {
+exports.handler = (event, context) => {
 
-  console.log(`seasoning.length`, seasoning.length);
   
   
   const quantity = event.queryStringParameters.quantity || 2;
   
+  console.log(`seasoning.length`, seasoning.length);
+  console.log(`quantity`, quantity);
+
   // Each visit to the market will get us 100 items.
   // And we'll be going more than you expected
   const visitsToTheMarket = quantity * 10;
