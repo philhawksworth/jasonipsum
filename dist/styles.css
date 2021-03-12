@@ -46,8 +46,9 @@ pre a:focus {
 }
 
 h2, h3 {
-  font-family: "Arial Black";
+  font-family: "Arial Black", Arial, Helvetica, sans-serif;
   text-transform: uppercase;
+  font-weight: bold;
   color: var(--secondary-accent-color);
   margin-top: 3rem;
 }
@@ -133,6 +134,7 @@ pre {
   padding: 2rem 2rem 1rem;
   margin: 1rem 0;
   border-radius: 8px;
+  overflow: auto;
 }
 
 #sample {
