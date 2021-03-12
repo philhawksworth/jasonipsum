@@ -3,7 +3,7 @@
 const organicStock = require('../../lib/ipsum.json');
 
 // Some Lengstorfian flourishes
-const garnish = require('../../lib/jason.json');
+const seasoning = require('../../lib/jason.json');
 
 
 // Carefully identify the perfect item. 
@@ -22,9 +22,6 @@ const visitFarmersMarket = (stall) => {
 exports.handler = (event) => {
   
   const quantity = event.queryStringParameters.quantity || 2;
-
-  console.log(`quantity`, quantity);
-  
   
   // Each visit to the market will get us 100 items.
   // And we'll be going more than you expected
@@ -39,9 +36,9 @@ exports.handler = (event) => {
     // Garnish it with some delicious Lengstorfian items
     for (let item = 0; item <= 40; item++) {
       // choose a word at random form our stock
-      // replace it with a random garnish
-      let freshGarnish = visitFarmersMarket(garnish);
-      stock.splice(handPick(stock), 1, freshGarnish);
+      // replace it with a random seasoning
+      let season = visitFarmersMarket(seasoning);
+      stock.splice(handPick(stock), 1, season);
     }
     jasonIpsum.push(stock.join(" "));
   }
