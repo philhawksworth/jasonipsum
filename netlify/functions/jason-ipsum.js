@@ -20,6 +20,9 @@ const visitFarmersMarket = (stall) => {
 
 
 exports.handler = (event) => {
+
+  console.log(`seasoning.length`, seasoning.length);
+  
   
   const quantity = event.queryStringParameters.quantity || 2;
   
